@@ -46,7 +46,7 @@ public class TextEditor extends FreeScrollingTextField{
     public TextEditor(Context context) {
         super(context);
         mContext = context;
-        init();
+        init(mContext);
     }
 
     public TextEditor(Context context, AttributeSet attributeSet) {
