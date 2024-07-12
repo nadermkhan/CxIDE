@@ -52,12 +52,17 @@ public class TextEditor extends FreeScrollingTextField{
     public TextEditor(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
         mContext = context;
-        init();
+        init(mContext);
     }
 
-    private void init() {
+    private void init(Context mContext) {
         //setVerticalScrollBarEnabled(true);
-        setTypeface(Typeface.MONOSPACE);
+        //setTypeface(Typeface.MONOSPACE);
+	    Typeface customFont = Typeface.createFromAsset(mContext.getAssets(), "fonts/jbm.ttf");
+
+    // Set the custom font as typeface
+    setTypeface(customFont);
+
         DisplayMetrics dm = mContext.getResources().getDisplayMetrics();
         //设置字体大小
         float size = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16.f, dm);
